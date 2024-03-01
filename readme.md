@@ -29,9 +29,10 @@
 <h2>Frontend Set up</h2>
 
 - Create folder "frontend": `touch frontend`.
-- Execute `cd frontend` and `npm create vite@latest`, then press Enter.
+- Execute `cd frontend` and `npm create vite@latest`.
+- Project name: `.`, then press Enter.
 - Select a framework: `React`.
 - Select a variant: `JavaScript`.
-- Run `npm i reat-router-dom`.
+- Run `npm i react-router-dom`.
 - Install Bootstrap package: `npm install react-bootstrap bootstrap`.
 - Install Bootstrap Icons: `npm i bootstrap-icons`
