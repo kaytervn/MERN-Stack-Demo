@@ -35,4 +35,3 @@
 - Select a variant: `JavaScript`.
 - Run `npm i react-router-dom`.
 - Install Bootstrap package: `npm install react-bootstrap bootstrap`.
-- Install Bootstrap Icons: `npm i bootstrap-icons`
