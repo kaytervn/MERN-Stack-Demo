@@ -23,6 +23,6 @@ mongoose
   .connect(process.env.DB_URI, { dbName: "demo_db" })
   .then(() => {
     console.log("Successfully connect to DB");
-    app.listen(4000, "localhost", () => console.log("Listening at 4000"));
+    app.listen(4000, () => console.log("Listening at 4000"));
   })
   .catch((err) => console.log(err));
