@@ -14,7 +14,7 @@ const Home = () => {
       const data = await getPosts();
       setPosts(data.posts);
       setLoading(false);
-    }, 500);
+    }, 1000);
   }, []);
 
   return (

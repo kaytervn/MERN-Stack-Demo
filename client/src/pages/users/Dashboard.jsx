@@ -24,7 +24,7 @@ const Dashboard = () => {
       const { posts, email } = await getUserPosts();
       setUser({ email, posts: posts });
       setLoading(false);
-    }, 500);
+    }, 1000);
   }, []);
 
   const handleDelete = async (_id) => {

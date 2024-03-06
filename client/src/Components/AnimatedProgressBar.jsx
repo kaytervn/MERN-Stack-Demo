@@ -9,7 +9,7 @@ const AnimatedProgressBar = () => {
       setProgress((prevProgress) =>
         prevProgress >= 100 ? 0 : prevProgress + 1
       );
-    }, 5);
+    }, 10);
     return () => clearInterval(interval);
   }, []);
 
