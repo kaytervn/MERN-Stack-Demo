@@ -2,6 +2,23 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
+    status: {
+      type: String,
+      enum: ["inactive", "active"],
+      default: "inactive",
+    },
+    code: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      default: null,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
     email: {
       type: String,
       required: true,
@@ -9,7 +26,7 @@ const UserSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      default: null,
     },
   },
   { timestamps: true }

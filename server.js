@@ -10,11 +10,10 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json({ limit: "200mb" }));
 
 app.use("/api/posts", postsRoutes);
 app.use("/api/users", usersRoutes);
-
 app.use(express.static(path.join(__dirname, "/client/dist")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/client/dist/index.html"))

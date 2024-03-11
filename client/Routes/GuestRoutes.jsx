@@ -5,7 +5,7 @@ import { Navigate, Outlet } from "react-router-dom";
 const GuestRoutes = () => {
   const { user } = useContext(UserContext);
 
-  return !user.email ? <Outlet /> : <Navigate to="/dashboard" />;
+  return !user.token ? <Outlet /> : <Navigate to="/dashboard" />;
 };
 
 export default GuestRoutes;

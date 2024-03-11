@@ -20,8 +20,8 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      await loginUser(formData.email, formData.password);
-      setUser({ email: formData.email, posts: [] });
+      const data = await loginUser(formData.email, formData.password);
+      setUser({ email: data.email, token: data.token, posts: [] });
       navigate("/dashboard");
     } catch (error) {
       setError(error.message);

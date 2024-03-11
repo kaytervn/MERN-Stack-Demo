@@ -5,7 +5,7 @@ import { Navigate, Outlet } from "react-router-dom";
 const AuthRoutes = () => {
   const { user } = useContext(UserContext);
 
-  return user.email ? <Outlet /> : <Navigate to="/login" />;
+  return user.token ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default AuthRoutes;

@@ -20,7 +20,7 @@ const getUserPosts = async () => {
   return data;
 };
 
-const createPost = async (title, body) => {
+const createPost = async (title, image, body) => {
   if (!title || !body) {
     throw Error("All fields are required!");
   }
@@ -30,7 +30,7 @@ const createPost = async (title, body) => {
       "Content-Type": "application/json",
       Authorization: `Bear ${localStorage.getItem("token")}`,
     },
-    body: JSON.stringify({ title, body }),
+    body: JSON.stringify({ title, image, body }),
   });
   const data = await res.json();
   if (!res.ok) {
@@ -53,14 +53,14 @@ const deletePost = async (_id) => {
   return data;
 };
 
-const updatePost = async (_id, title, body) => {
+const updatePost = async (_id, title, image, body) => {
   const res = await fetch(`/api/posts/${_id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bear ${localStorage.getItem("token")}`,
     },
-    body: JSON.stringify({ title, body }),
+    body: JSON.stringify({ title, image, body }),
   });
   const data = await res.json();
   if (!res.ok) {

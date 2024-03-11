@@ -22,9 +22,9 @@ const Dashboard = () => {
   useEffect(() => {
     setTimeout(async () => {
       const { posts, email } = await getUserPosts();
-      setUser({ email, posts: posts });
+      setUser({ ...user, email, posts: posts });
       setLoading(false);
-    }, 1000);
+    }, 0);
   }, []);
 
   const handleDelete = async (_id) => {

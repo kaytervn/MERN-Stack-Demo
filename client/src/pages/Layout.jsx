@@ -27,7 +27,7 @@ const Layout = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              {user.email ? (
+              {user.token ? (
                 <>
                   <Nav.Link href="/create">Create Post</Nav.Link>
                   <Nav.Link href="/dashboard">Dashboard</Nav.Link>
