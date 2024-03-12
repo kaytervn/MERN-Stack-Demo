@@ -76,7 +76,7 @@ mongoose
   .catch((err) => console.log(err));
 ```
 
-<h3>Add building script to package.json<h3>
+<h3>Add building script to package.json</h3>
 
 ```
 "build": "npm install --prefix ./client && npm run build --prefix ./client && npm install"
