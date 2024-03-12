@@ -8,6 +8,7 @@ import { loginUser } from "../../controllers/usersController.js";
 import { DangerAlert } from "../../Components/CustomAlert.jsx";
 import { UserContext } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Login = () => {
   const { user, setUser } = useContext(UserContext);
@@ -62,6 +63,15 @@ const Login = () => {
           >
             Login
           </Button>
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              console.log(credentialResponse);
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+            useOneTap
+          />
           {error && <DangerAlert error={error} />}
         </Card.Body>
       </Card>

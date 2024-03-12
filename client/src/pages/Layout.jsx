@@ -1,10 +1,12 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Image from "react-bootstrap/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Outlet, useNavigate } from "react-router-dom";
+import userImage from "../../images/user.png";
 
 const Layout = () => {
   const { user, setUser } = useContext(UserContext);
@@ -32,6 +34,12 @@ const Layout = () => {
                   <Nav.Link href="/create">Create Post</Nav.Link>
                   <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                   <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                  <Image
+                    src={userImage || user.image}
+                    style={{ width: "40px", height: "40px" }}
+                    className="me-2"
+                  ></Image>
+                  <Navbar.Text>{user.email}</Navbar.Text>
                 </>
               ) : (
                 <>
