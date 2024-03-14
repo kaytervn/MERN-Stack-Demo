@@ -45,7 +45,7 @@
 
 <h3>Modify "server.js" with context recognition for absolute links</h3>
 
-```
+```js
 import express from "express";
 import mongoose from "mongoose";
 import { postsRoutes } from "./routes/postsRoutes.js";
@@ -78,7 +78,7 @@ mongoose
 
 <h3>Add building script to package.json</h3>
 
-```
+```js
 "build": "npm install --prefix ./client && npm run build --prefix ./client && npm install"
 ```
 
