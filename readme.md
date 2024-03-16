@@ -88,4 +88,4 @@ To prepare for deployment, delete these files/folders which will be automaticall
 - folder "node modules".
 - package-lock.json.
 
-You can fill the environment variables which are taken from the ".env" file.
+Fill the environment variables which are taken from the ".env" file.
