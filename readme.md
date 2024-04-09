@@ -15,7 +15,12 @@
 
 - Create folder "backend": `touch backend`.
 - Execute `cd backend` and `npm init`, then press Enter until the end.
-- Install packages: `npm i express mongoose dotenv bcryptjs jsonwebtoken nodemon nodemailer`.
+- Install packages: `npm i express mongoose dotenv bcryptjs jsonwebtoken nodemon nodemailer multer`.
+- Define this argument in `package.json`
+
+  ```json
+  "type": "module"
+  ```
 
 <h3>Note:</h3>
 
@@ -25,6 +30,7 @@
 | Nodemon        | automatically restarts the node application when file changes in the directory are detected.            |
 | JSON Web Token | JWT is a way for creating data with optional signature and/or optional encryption.                      |
 | Bcryptjs       | a library to help you hash passwords                                                                    |
+| Multer         | a module that support uploading files                                                                   |
 
 <h2>Frontend Set up</h2>
 
@@ -89,3 +95,7 @@ To prepare for deployment, delete these files/folders which will be automaticall
 - package-lock.json.
 
 Fill the environment variables which are taken from the ".env" file.
+
+<h3>MongoDB Atlat Setup</h3>
+
+- `Network Access` -> `Delete` IP -> `Add IP Address` -> `Allow anywhere`
