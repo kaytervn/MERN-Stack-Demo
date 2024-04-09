@@ -82,7 +82,7 @@ mongoose
 "build": "npm install --prefix ./client && npm run build --prefix ./client && npm install"
 ```
 
-To prepare for deployment, delete these files/folders which will be automatically install by the script above to reduce size (optional):
+To prepare for deployment, delete these files/folders which will be automatically installed by the script above to reduce size (optional):
 
 - folder "dist".
 - folder "node modules".
