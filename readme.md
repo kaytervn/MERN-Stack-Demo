@@ -29,9 +29,9 @@
 | Mongoose       | a JavaScript object-oriented programming library that creates a connection between MongoDB and Node.js. |
 | Nodemon        | automatically restarts the node application when file changes in the directory are detected.            |
 | JSON Web Token | JWT is a way for creating data with optional signature and/or optional encryption.                      |
-| Bcryptjs       | a library to help you hash passwords                                                                    |
-| Multer         | a module that support uploading files                                                                   |
-| Cron Job       | automatically sends GET requests to keep the site in an active state at all times after deployment      |
+| Bcryptjs       | a library to help you hash passwords.                                                                   |
+| Multer         | a module that support uploading files.                                                                  |
+| Cron Job       | automatically sends GET requests to keep the site in an active state at all times after deployment.     |
 
 <h2>Frontend Set up</h2>
 
