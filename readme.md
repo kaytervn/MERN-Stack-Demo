@@ -15,7 +15,7 @@
 
 - Create folder "backend": `touch backend`.
 - Execute `cd backend` and `npm init`, then press Enter until the end.
-- Install packages: `npm i express mongoose dotenv bcryptjs jsonwebtoken nodemon nodemailer multer`.
+- Install packages: `npm i express mongoose dotenv bcryptjs jsonwebtoken nodemon nodemailer multer cron`.
 - Define this argument in `package.json`
 
   ```json
@@ -31,6 +31,7 @@
 | JSON Web Token | JWT is a way for creating data with optional signature and/or optional encryption.                      |
 | Bcryptjs       | a library to help you hash passwords                                                                    |
 | Multer         | a module that support uploading files                                                                   |
+| Cron Job       | automatically sends a request to keep the site in an active state at all times after deployment         |
 
 <h2>Frontend Set up</h2>
 
@@ -80,6 +81,54 @@ mongoose
     app.listen(4000, () => console.log("Listening at 4000"));
   })
   .catch((err) => console.log(err));
+```
+
+<h3>File "cron.js"</h3>
+
+```js
+import cron from "cron";
+import https from "https";
+
+const URL = "https://food-app-api-demo.onrender.com";
+
+const job = new cron.CronJob("*/14 * * * *", function () {
+  https
+    .get(URL, (res) => {
+      if (res.statusCode == 200) {
+        console.log("GET request sent successfully");
+      } else {
+        console.log("GET request failed", res.statusCode);
+      }
+    })
+    .on("error", (e) => {
+      console.error("Error while sending request", e);
+    });
+});
+
+export default job;
+
+// CRON JOB EXPLANATION:
+// Cron jobs are scheduled tasks that run periodically at fixed intervals or specific times
+// send 1 GET request for every 14 minutes
+
+// Schedule:
+// You define a schedule using a cron expression, which consists of five fields representing:
+
+//! MINUTE, HOUR, DAY OF THE MONTH, MONTH, DAY OF THE WEEK
+
+//? EXAMPLES && EXPLANATION:
+//* 14 * * * * - Every 14 minutes
+//* 0 0 * * 0 - At midnight on every Sunday
+//* 30 3 15 * * - At 3:30 AM, on the 15th of every month
+//* 0 0 1 1 * - At midnight, on January 1st
+//* 0 * * * * - Every hour
+```
+
+**Add these to `server.js`**
+
+```js
+import job from "./utils/cron.js";
+job.start();
 ```
 
 <h3>Add building script to package.json</h3>
