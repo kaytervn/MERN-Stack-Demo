@@ -31,7 +31,7 @@
 | JSON Web Token | JWT is a way for creating data with optional signature and/or optional encryption.                      |
 | Bcryptjs       | a library to help you hash passwords                                                                    |
 | Multer         | a module that support uploading files                                                                   |
-| Cron Job       | automatically sends a request to keep the site in an active state at all times after deployment         |
+| Cron Job       | automatically sends GET requests to keep the site in an active state at all times after deployment      |
 
 <h2>Frontend Set up</h2>
 
